@@ -1,8 +1,8 @@
 const User = require('./modules/User');
 const Role = require('./modules/Role');
 const Token = require('./modules/Token');
-const News = require('./modules/News');
-const bcrypt = require('bcrypt');
+// const News = require('./modules/News');
+const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const generator = require('generate-password');
 
@@ -137,37 +137,37 @@ class authController {
     }
   }
 
-  async getNews(req, res) {
-    try {
-      const news = await News.find();
-      res.json(news);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async getNews(req, res) {
+  //   try {
+  //     const news = await News.find();
+  //     res.json(news);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
-  async News(req, res) {
-    try {
-      const { title, date, description } = req.body;
+  // async addNews(req, res) {
+  //   try {
+  //     const { title, date, description } = req.body;
 
-      // save news
-      const news = new News({
-        title,
-        date,
-        description,
-      });
-      console.log(news);
+  //     // save news
+  //     const news = new News({
+  //       title,
+  //       date,
+  //       description,
+  //     });
+  //     console.log(news);
 
-      await news.save();
+  //     await news.save();
 
-      return res.json({
-        message: 'Новину додано',
-      });
-    } catch (error) {
-      console.log(error);
-      res.status(400).json({ message: 'News error.' });
-    }
-  }
+  //     return res.json({
+  //       message: 'Новину додано',
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //     res.status(400).json({ message: 'News error.' });
+  //   }
+  // }
 
   async activate(req, res) {
     try {

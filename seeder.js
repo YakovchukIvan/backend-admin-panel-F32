@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('./modules/User');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const { url_db, hash_password } = require('./config');
 
 mongoose.connect(url_db);

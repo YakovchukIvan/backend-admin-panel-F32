@@ -42,7 +42,7 @@ router.post('/ChangePassword', authMiddleware, controller.changePassword);
 router.get('/activate/:userId', controller.activate);
 router.post('/ForgotPassword', controller.forgotPassword);
 router.post('/updateProfile', authMiddleware, controller.updateProfile);
-router.get('/getNews', controller.getNews);
-router.post('/News', controller.News);
+// router.get('/getNews', controller.getNews);
+// router.post('/News', controller.addNews);
 
 module.exports = router;
