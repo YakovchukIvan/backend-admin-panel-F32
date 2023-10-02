@@ -11,7 +11,7 @@ module.exports = function (req, res, next){
     //получаємо токена
     const token = req.headers.authorization.split(' ')[1]
     if (!token) {
-      return res.status(401).json({message: 'Користувач не авторизований'})  
+      return res.status(401).json({message: 'Користувач не авторизований !!!'})  
     }
     //декудуємо токена
     const decodedData = jwt.verify(token, jwt_access_secret);
@@ -20,7 +20,7 @@ module.exports = function (req, res, next){
 
   } catch (error) {
     console.log(error);
-    return res.status(401).json({message: 'Користувач не авторизований'})
+    return res.status(401).json({message: 'Користувач не авторизований !!!'})
   }
 
 
